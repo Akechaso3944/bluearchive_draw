@@ -1,0 +1,2 @@
+# bluearchive_draw
+ブルアカルーレットです
