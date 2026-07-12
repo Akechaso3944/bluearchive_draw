@@ -1,0 +1,290 @@
+/* ==========================================
+   共通変数・基本設定
+   ========================================== */
+:root {
+    --ba-blue: #00a3ff;
+    --ba-blue-dark: #007ecc;
+    --ba-blue-light: #e6f6ff;
+    --ba-bg: #f4f7f9;
+    --ba-white: #ffffff;
+    --ba-text: #2c3e50;
+    --ba-text-sub: #7f8c8d;
+    --ba-danger: #ff4d4d;
+    --ba-danger-dark: #cc3333;
+    --radius-sm: 8px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+    --shadow: 0 4px 15px rgba(0, 163, 255, 0.15);
+    --shadow-hover: 0 8px 25px rgba(0, 163, 255, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--ba-bg);
+    color: var(--ba-text);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ヘッダーデザイン
+   ========================================== */
+.app-header {
+    background-color: var(--ba-white);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid var(--ba-blue);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-logo {
+    background-color: var(--ba-blue);
+    color: var(--ba-white);
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-right: 15px;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* ==========================================
+   レイアウト
+   ========================================== */
+.app-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   コントロールパネル
+   ========================================== */
+.control-panel {
+    background-color: var(--ba-white);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ba-blue);
+}
+
+.input-group input {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border: 2px solid var(--ba-blue-light);
+    border-radius: var(--radius-sm);
+    width: 100px;
+    text-align: center;
+    color: var(--ba-text);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: var(--ba-blue);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+/* ボタンの共通デザイン（丸み・影） */
+.btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-primary {
+    background-color: var(--ba-blue);
+    color: var(--ba-white);
+    flex-grow: 2;
+}
+
+.btn-primary:hover {
+    background-color: var(--ba-blue-dark);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-danger {
+    background-color: var(--ba-white);
+    color: var(--ba-danger);
+    border: 2px solid var(--ba-danger);
+    flex-grow: 1;
+}
+
+.btn-danger:hover {
+    background-color: var(--ba-danger);
+    color: var(--ba-white);
+}
+
+.status-display {
+    font-size: 0.9rem;
+    color: var(--ba-text-sub);
+    font-weight: 500;
+}
+
+#remaining-count {
+    color: var(--ba-blue);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* ==========================================
+   ルーレット演出エリア
+   ========================================== */
+.roulette-display {
+    background: linear-gradient(135deg, var(--ba-blue) 0%, var(--ba-blue-dark) 100%);
+    color: var(--ba-white);
+    padding: 40px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-hover);
+    animation: pulse 2s infinite alternate;
+}
+
+.roulette-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#roulette-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.roulette-sub {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.01); }
+}
+
+/* ==========================================
+   結果表示（生徒カード）
+   ========================================== */
+.results-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--ba-text);
+    border-left: 5px solid var(--ba-blue);
+    padding-left: 10px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* ブルアカ公式風カードUI */
+.student-card {
+    background-color: var(--ba-white);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 163, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* 学校名のすかし風バックグラウンドタグ（将来のフィルター拡張にも便利） */
+.student-card .school-tag {
+    font-size: 0.75rem;
+    color: var(--ba-blue);
+    background-color: var(--ba-blue-light);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.student-card .student-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ba-text);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   レスポンシブ対応
+   ========================================== */
+@media (max-width: 600px) {
+    .control-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .input-group input {
+        width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .results-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

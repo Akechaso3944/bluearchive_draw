@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生徒抽選システム - Blue Archive Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1 class="header-title">ぶるあかるーれっと！</h1>
+    </header>
+
+    <main class="app-container">
+        <section class="control-panel">
+            <div class="input-group">
+                <label for="draw-count">抽選人数</label>
+                <input type="number" id="draw-count" min="1" value="1">
+            </div>
+            
+            <div class="button-group">
+                <button id="btn-start" class="btn btn-primary">抽選開始</button>
+                <button id="btn-reset" class="btn btn-danger">リセット</button>
+            </div>
+
+            <div class="status-display">
+                抽選可能人数: <span id="remaining-count">0</span> / <span id="total-count">0</span> 人
+            </div>
+        </section>
+
+        <section id="roulette-display" class="roulette-display hidden">
+            <div class="roulette-inner">
+                <span id="roulette-name">???</span>
+                <span id="roulette-school" class="roulette-sub">---</span>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <h2>当選生徒一覧</h2>
+            <div id="results-grid" class="results-grid">
+                </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
