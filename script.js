@@ -54,7 +54,7 @@ async function checkAndRegisterUser() {
     let savedUserId = localStorage.getItem('ba_user_id');
     
     while (!savedUserId || savedUserId.trim() === '') {
-        const inputId = prompt('【初回登録】あなたのユーザーID（英数字）を決めて入力してください：\n（例: AAA1111）');
+        const inputId = prompt('【初回登録】あなたのユーザーID（英数字）を決めて入力してください：\n（例: NIAHAGE0041）');
         if (inputId !== null && inputId.trim() !== '') {
             savedUserId = inputId.trim();
             localStorage.setItem('ba_user_id', savedUserId);
